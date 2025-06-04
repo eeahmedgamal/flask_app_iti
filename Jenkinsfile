@@ -40,6 +40,7 @@ pipeline {
         stage('Deploy to K3s') {
             steps {
                 sh '''
+                export KUBECONFIG=/var/lib/jenkins/.kube/config
                 sed "s|{{IMAGE}}|$FULL_IMAGE|g" k8s/deployment.yaml | kubectl apply -f -
                 kubectl apply -f k8s/service.yaml
                 '''
