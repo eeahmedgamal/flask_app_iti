@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                git url: 'https://github.com/eeahmedgamal/flask-kubernetes.git'
+                git url: 'https://github.com/eeahmedgamal/flask_app_iti.git'
             }
         }
 
