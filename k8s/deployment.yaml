@@ -12,6 +12,8 @@ spec:
       labels:
         app: flask-app
     spec:
+      imagePullSecrets:
+      - name: acr-cred
       containers:
       - name: flask-app
         image: {{IMAGE}}
@@ -24,5 +26,3 @@ spec:
             cpu: "50m"
         ports:
         - containerPort: 5000
-        imagePullSecrets:
-        - name: acr-cred
